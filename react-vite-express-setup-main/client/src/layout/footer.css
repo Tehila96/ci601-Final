@@ -1,0 +1,14 @@
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    min-height: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: rgb(255, 255, 255);
+}
+
+footer p {
+    margin: .2rem 0;
+    color: rgb(0, 0, 0);
+}

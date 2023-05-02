@@ -1,0 +1,27 @@
+/*--Mobile first--*/
+.menu_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.box {
+    background-color: #444;
+    color: #fff;
+    padding: 20px;
+    font-size: 150%;
+}
+
+@media screen and (min-width: 768px) {
+    .menu_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 10px;
+        margin: 10px;
+    }
+
+    .box {
+        padding: 20px;
+    }
+}
