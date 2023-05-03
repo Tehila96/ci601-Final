@@ -6,7 +6,7 @@ const credentials = {
  database: 'ts813_ci601'
 };
 
-const connection = mysql.createConnection(credentials);
+const connection = mysql.createConnection(credentials); //connection to the database with server credentials
 
 module.exports = {
     connection

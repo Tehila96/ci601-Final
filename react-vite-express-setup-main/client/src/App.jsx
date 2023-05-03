@@ -17,7 +17,7 @@ import Footer from './layout/footer';
 function App() {
   const [count, setCount] = useState(0);
   const [data, setData] = useState();
-    const url = "/api/v1";
+    const url = "/api/v1/items";
   
 useEffect(getData,[]);
 

@@ -5,7 +5,8 @@ const express = require("express"),
   const db = require("./db");
   const connection = db.connection;
 
-app.get("/api/items", (req, res) => {
+app.get("/api/v1/items", (req, res) => {
+  console.log('inside get');
   connection.query(
     'SELECT * FROM items',
     function(err, items) {
