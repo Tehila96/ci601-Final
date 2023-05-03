@@ -8,7 +8,7 @@ import Women from './pages/women';
 import Men from './pages/men';
 import Blog from './pages/blog';
 import Closet from './pages/closet';
-import Account from './pages/account';
+import Account from './pages/login';
 import About from './pages/about';
 import Home from './pages/home';
 import Footer from './layout/footer';
@@ -22,7 +22,6 @@ function App() {
 useEffect(getData,[]);
 
   function getData() {
-    console.log('in getData')
     axios
       .get(url)
       .then((res) => {
@@ -33,9 +32,6 @@ useEffect(getData,[]);
         console.error(err);
       });
   }
-      
- 
-  console.log('inside -App')
 
   // Render all components for application
   return (

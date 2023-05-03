@@ -5,7 +5,7 @@ const Nav = () => {
     return (
         <>
             <div className="logo">
-                <NavLink to="/home"><img id="logo" src="/images/Second Best.png" alt="logo" /></NavLink>
+                <NavLink to="/home"><img id="logo" src=""alt="logo" /></NavLink>
             </div>
             <button id="button_close" onClick={() => {
                 document.getElementById("navbar")
@@ -24,7 +24,7 @@ const Nav = () => {
                 <ul>
                     <li><NavLink to="/closet">Closet</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
-                    <li><NavLink to="/account">Account</NavLink></li>
+                    <li><NavLink to="/account">Log In</NavLink></li>
                 </ul>
 
             </nav>
