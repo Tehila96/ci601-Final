@@ -17,6 +17,7 @@ import Footer from './layout/footer';
 function App() {
   const [count, setCount] = useState(0);
   const [data, setData] = useState();
+
     const url = "/api/v1/items";
   
 useEffect(getData,[]);
@@ -32,6 +33,7 @@ useEffect(getData,[]);
         console.error(err);
       });
   }
+
 
   // Render all components for application
   return (
