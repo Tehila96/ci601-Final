@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './pageStyle.css';
 
 function Men() {
     return (

@@ -1,30 +1,31 @@
   header {
     display: grid;
     place-items: center;
-    }
-  
+  }
+
   nav {
     display: none;
     place-items: center;
     grid-template-columns: 1fr;
     min-height: 100vh;
     min-width: 100vw;
+    top: 0;
     position: absolute;
-    top:0;
-    background-color: #fff;
+    background-color: #111110;
   }
- 
+
+
   nav li {
     list-style-type: none;
   }
 
-  nav li > a {
-    color: #000000;
+  nav li>a {
+    color: #ffffff;
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 200;
   }
-  
+
   nav ul {
     width: 100%;
     height: 100%;
@@ -33,60 +34,65 @@
     display: grid;
     place-items: center;
   }
-  
+
   .active {
-     display: grid;
+    display: grid;
   }
-  
+
   #button_close {
     position: absolute;
     top: 0;
     right: 0;
+    background-color: #111110;
+    border: #ffffff;
+    padding: 10px;
   }
-  
+
   #button_open {
     position: absolute;
     top: 0;
     right: 0;
+    background-color: #111110;
+    border: #ffffff;
+    padding: 10px;
   }
 
   #logo {
     max-width: 290px;
-    background-color: #ffffff;
- }
+  }
 
- .logo {
-  background-color: #ffffff;
-  display: grid;
-  place-items: center;
- }
-   
+  .logo {
+    background-color: #111110;
+    display: grid;
+    place-items: left;
+    padding: 10px ;
+  }
+
   @media screen and (min-width: 768px) {
     nav {
-      
-    min-height: auto;
-    min-width: 100vw;
+      min-height: auto;
+      min-width: 100vw;
+      background-color: #111110;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      top: 0;
+      left: 0;
     }
-    
+
     nav li {
-    margin: 10px;
-    padding: 10px;
-  }
-    
+      margin: 10px;
+      padding: 10px;
+    }
+
     nav ul {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
     }
-    
-    nav {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 150px;
-      position: relative;
+ 
+    .active {
       left: 0;
     }
-
-    .active {left:0;}
 
     #button_close {
       display: none;
@@ -95,5 +101,11 @@
     #button_open {
       display: none;
     }
+
+    .logo {
+      background-color: #111110;
+      display: grid;
+      place-items: center;
+      z-index: 9999;
+    }
   }
-  

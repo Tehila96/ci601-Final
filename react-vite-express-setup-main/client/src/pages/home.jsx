@@ -1,14 +1,20 @@
+import React from "react";
+import './pageStyle.css';
+
+
 function Home() {
     return (
-        <section id="hero" className='Hero'>
+        <div id="wrapper">
+            <img src="images/home hero.png" alt="Hero image" className="hero" />
             <header>
-                <h2>Hello and Wellcome to Second Best!</h2>
+                <h2>Your Sustainable social platform for swapping second-hand clothes!</h2>
             </header>
-            <p>Your Sustainable social platform for swapping second-hand clothes!</p>
-            <ul className="actions">
-                <li><a href="#" className="button">To the main Closet!</a></li>
-            </ul>
-        </section>
+
+            <div className="cards">
+                <div className="women_card"></div>
+                <div className="men_card"></div>
+            </div>
+        </div>
     );
 }
-export default Home;
+export default Home; 

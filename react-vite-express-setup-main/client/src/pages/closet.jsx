@@ -1,8 +1,12 @@
+import React from 'react';
+import Profile from "../components/profile";
+import './pageStyle.css';
+
 function Closet() {
     return (
-        <div>
-            <p>Personal Profile section</p>
-        </div>
+        <>
+            <Profile />        
+        </>
     );
 }
 export default Closet;

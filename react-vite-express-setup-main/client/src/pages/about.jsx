@@ -1,4 +1,5 @@
-import '../App.css';
+import './pageStyle.css';
+
 function About() {
     return (
         <div>
