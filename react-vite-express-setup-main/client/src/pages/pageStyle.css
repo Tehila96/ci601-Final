@@ -1,14 +1,14 @@
 /*--Mobile first--*/
-.menu_grid {
+.box_grid {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr;
 }
 
 .box {
     background-color: #444;
     color: #fff;
-    padding: 20px;
+    padding: 10px;
     font-size: 150%;
 }
 
@@ -78,16 +78,17 @@
     #warpper {
         background-color: #111110;
     }
-    .menu_grid {
+    .box_grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-gap: 10px;
-        margin: 10px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 5px;
+        margin-top: 10px;
+        align-items: start;
     }
 
     .box {
-        padding: 20px;
+        padding: 10px;
     }
 
     .cards {

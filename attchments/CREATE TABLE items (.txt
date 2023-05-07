@@ -1,0 +1,22 @@
+CREATE TABLE items (
+	itemID VARCHAR(50) PRIMARY KEY NOT NULL, 
+	colour VARCHAR(40) NOT NULL, 
+	size VARCHAR(30) NOT NULL, 
+	gender ENUM('WOMEN', 'MEN') NOT NULL, 
+	brand VARCHAR(40), 
+	state ENUM ('new', 'used-like new', 'used-good', 'used-fair') NOT NULL, 
+	description VARCHAR(1000), 
+	image BLOB , 
+	price SMALLINT (200) NOT NULL , 
+	category ENUM ('Tops', 'Bottoms','Shoes','Accessories') NOT NULL,  
+	stock ENUM ('Sold', 'Available') NOT NULL
+);
+
+INSERT INTO items (itemID , colour , size , gender, brand , state, description , image , price , category , stock )
+VALUES
+('rb148', 'Red', 'Small','Women','Zara','New', 'A red short sleeve Zara top- haven't been worn','','Tops','Available'), 
+('tg690', 'Orange', 'Large','Men','Primark','Used-like new', 'Orange flipflops','','Shoes','Available'), 
+('uk180', 'Blue', 'x-Small','Men','Holister','used-good', 'Men blue tank top','','Tops','Sold'), 
+('rb148', 'Silver', 'Medium','Women','Bershka','New', 'Silver butterfly ring','','Accessories','Available'); 
+
+	

@@ -6,7 +6,13 @@ const ItemsView = (props) => {
   console.log(props.items);
   const elements = props.items.map((it, i) => (
     <li key={i}>
-      {it.itemID} , {it.name} , {it.price}
+       {it.color} ,
+       {it.size} ,
+       {it.category} ,
+       {it.state} ,
+       {it.price} ,
+       {it.description} ,
+       {it.stock}
     </li>
   ));
 
