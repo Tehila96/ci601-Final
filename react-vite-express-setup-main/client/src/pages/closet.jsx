@@ -1,9 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
 import Profile from "../components/profile";
-import UploadWidget from '../components/uploadWidget';
 import './pageStyle.css';
 
+import { useState } from 'react';
+import UploadWidget from '../components/UploadWidget';
 
 function Closet() {
     const [url, updateUrl] = useState();
@@ -22,7 +22,7 @@ function Closet() {
 
     return (
         <>
-            <Profile />        
+            <Profile />  
 
             <UploadWidget onUpload={handleOnUpload}>
           {({ open }) => {
@@ -36,8 +36,8 @@ function Closet() {
               </button>
             )
           }}
-        </UploadWidget>
-
+        </UploadWidget>    
+        
         </>
     );
 }

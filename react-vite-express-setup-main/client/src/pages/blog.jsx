@@ -5,7 +5,6 @@ function Blog() {
         <div className="blog">
             <div className="blog_container">
                 <div className="blog_item">
-                    <img src="images/blog1.png" alt="blog1" className="blog_img" />
                     <div className="blog_text">
                         <h3>How to make your clothes last longer</h3>
                         <p>By: <span className="blog_author">Tehila Shoham</span></p>

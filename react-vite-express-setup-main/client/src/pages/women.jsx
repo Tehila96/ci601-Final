@@ -1,4 +1,5 @@
 import React from "react";
+import Select from 'react-select';
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import ItemsView from "../components/itemsView";
@@ -8,7 +9,7 @@ import './pageStyle.css';
 function Women() {
   const [arItems, setArItems] = useState();
   const [arItemsFilter, setArItemsFilter] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("Tops"); // ["Tops", "Bottoms", "Shoes", "Accessories"
+  const [selectedCatagory, setSelectedCatagory] = useState([]);
   const minInputRef1 = useRef();
   const maxInputRef = useRef();
 
@@ -28,60 +29,42 @@ function Women() {
       });
   }
 
-  const priceMin = minInputRef1.current.value;
-  const priceMax = maxInputRef.current.value;
 
   return (
-    <>
-      <div className="box_grid">
-        <div className="box">Tops</div>
-        <div className="box">Bottoms</div>
-        <div className="box">Shoes</div>
-        <div className="box">Accessories</div>
-      </div>
+    <div className="wrapper">
+      <div className="filter">
+        <h2>Filter</h2>
+        <p>Price</p>
+        <label htmlFor="">Min</label>
+        <input ref={minInputRef1} type="number" />
+        <label htmlFor="">Max</label>
+        <input ref={maxInputRef} type="number" />
+        <label htmlFor=""></label>
+        <p>Category</p>
+        <Select
+          options={[
+            { value: "Tops", label: "Tops" },
+            { value: "Bottoms", label: "Bottoms" },
+            { value: "Shoes", label: "Shoes" },
+            { value: "Accessories", label: "Accessories" },
+          ]}
+          onChange={(e) => {
+            setSelectedCatagory(e.value);
+          }}
+        />
 
-      <h2>Filter</h2>
-      <label htmlFor="">priceMin</label>
-      <input ref={minInputRef1} type="number" />
-      <br />
-      <label htmlFor="">priceMax</label>
-      <input ref={maxInputRef} type="number" />
-      {/* <br />
-        <label htmlFor="">colour</label>
-        <input type="checkbox" />
-      <br />
-        <label htmlFor="">size</label>
-        <input type="text" />
-      <br />
-        <label htmlFor="">category</label>
-        <input type="text" />
-      <br />
-        <label htmlFor="">state</label>
-        <input type="text" />
-      <br /> */}
-      <button
-        onClick={() => {
-          const filteredItems = arItems.filter((it) => it.price >= priceMin && it.price <= priceMax);
+        <button onClick={() => {
+          const priceMin = minInputRef1.current.value;
+          const priceMax = maxInputRef.current.value;
+          const filteredItems = arItems.filter((it) => (it.price >= priceMin && it.price <= priceMax) &&
+            (it.category === selectedCatagory));
           setArItemsFilter(filteredItems);
-        }}
-      >Filter By Price
-      </button>
-      <button onClick={() => {
-        const filteredItems = arItems.filter((it) => it.category === selectedCategory);
-        setArItemsFilter(filteredItems);
-      }}
-      >Filter by category</button>
-      <button onClick={() => {
-        const filteredItems = arItems.filter((it) => (it.price >= priceMin && it.price <= priceMax) && 
-                                             (it.category === selectedCategory));
-        setArItemsFilter(filteredItems);
-      }}>Filter by all</button>
+        }}>Filter</button>
+        <ItemsView items={arItemsFilter} />
+      </div>
       <ItemsView items={arItemsFilter} />
-    </>
+    </div>
   );
 }
 
 export default Women;
-
-
-

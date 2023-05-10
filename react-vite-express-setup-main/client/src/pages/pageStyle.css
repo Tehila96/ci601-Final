@@ -1,14 +1,8 @@
 /*--Mobile first--*/
-.box_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows: 1fr;
-}
-
 .box {
     background-color: #444;
     color: #fff;
-    padding: 10px;
+    padding: 20px;
     font-size: 150%;
 }
 
@@ -78,17 +72,14 @@
     #warpper {
         background-color: #111110;
     }
-    .box_grid {
+    .menu_grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
-        grid-gap: 5px;
-        margin-top: 10px;
-        align-items: start;
     }
 
     .box {
-        padding: 10px;
+        padding: 20px;
     }
 
     .cards {
@@ -99,6 +90,16 @@
         padding: 20px;
         background-color: #111110;
         color:#fff;
+    }
+
+    .filter {
+        width: 30%;
+        height: 40%;
+        background-color: #ffffff;
+        color:#111110;
+        border: #111110 2px solid;
+        margin: 10px;
+        padding: 10px;
     }
 }
 

@@ -14,9 +14,7 @@ CREATE TABLE items (
 
 INSERT INTO items (itemID , colour , size , gender, brand , state, description , image , price , category , stock )
 VALUES
-('rb148', 'Red', 'Small','Women','Zara','New', 'A red short sleeve Zara top- haven't been worn','','Tops','Available'), 
-('tg690', 'Orange', 'Large','Men','Primark','Used-like new', 'Orange flipflops','','Shoes','Available'), 
-('uk180', 'Blue', 'x-Small','Men','Holister','used-good', 'Men blue tank top','','Tops','Sold'), 
-('rb148', 'Silver', 'Medium','Women','Bershka','New', 'Silver butterfly ring','','Accessories','Available'); 
-
-	
+('rb148', 'Red', 'Small','Women','Zara','New', 'A red short sleeve Zara top- never been worn','','5','Tops','Available'), 
+('tg690', 'Orange', 'Large','Men','Primark','Used-like new', 'Orange flipflops','','10','Shoes','Available'), 
+('uk180', 'Blue', 'x-Small','Men','Holister','used-good', 'Men blue tank top','','32','Tops','Sold'), 
+('kl936', 'Silver', 'Medium','Women','Bershka','New', 'Silver butterfly ring','','25','Accessories','Available'); 
