@@ -9,26 +9,25 @@ import './pageStyle.css';
 function Women() {
   const [arItems, setArItems] = useState();
   const [arItemsFilter, setArItemsFilter] = useState([]);
-  const [selectedCatagory, setSelectedCatagory] = useState([]);
+  const [selectedCatagory, setSelectedCatagory] = useState(["Any"]);
   const minInputRef1 = useRef();
   const maxInputRef = useRef();
 
-  const url = "/api/v1/items";
+  const url = "/api/v1/items/women";
 
-  useEffect(getData, []);
-
-  function getData() {
+   function getData() {
     axios
       .get(url)
       .then((res) => {
         setArItems(res.data);
-        console.log(res.data);
+        setArItemsFilter(res.data); // Added in order to show items on first render.
       })
       .catch((err) => {
         console.error(err);
       });
   }
 
+  useEffect(getData, []);
 
   return (
     <div className="wrapper">
@@ -43,6 +42,7 @@ function Women() {
         <p>Category</p>
         <Select
           options={[
+            { value: "Any", label: "Any" },
             { value: "Tops", label: "Tops" },
             { value: "Bottoms", label: "Bottoms" },
             { value: "Shoes", label: "Shoes" },
@@ -54,17 +54,28 @@ function Women() {
         />
 
         <button onClick={() => {
+          // Added some input validations
+          // Could also add alerts and reject requests for invalid input
+
           const priceMin = minInputRef1.current.value;
           const priceMax = maxInputRef.current.value;
-          const filteredItems = arItems.filter((it) => (it.price >= priceMin && it.price <= priceMax) &&
-            (it.category === selectedCatagory));
+          let filteredItems = arItems;
+          if (priceMin.trim() || priceMax.trim()) {
+            if (priceMin && !priceMax)
+              filteredItems = arItems.filter((it) => it.price >= priceMin)
+            else if (priceMax && !priceMin)
+              filteredItems = arItems.filter((it) => it.price <= priceMax)
+            else
+              filteredItems = arItems.filter((it) => it.price <= priceMax && it.price >= priceMin)
+          }
+          if (selectedCatagory != "Any")
+            filteredItems = filteredItems.filter((it) => it.category === selectedCatagory);
+            console.log(filteredItems);
           setArItemsFilter(filteredItems);
         }}>Filter</button>
-        <ItemsView items={arItemsFilter} />
       </div>
       <ItemsView items={arItemsFilter} />
     </div>
-  );
+  )
 }
-
 export default Women;
