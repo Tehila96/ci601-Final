@@ -1,18 +1,15 @@
 var bodyParser = require('body-parser');
-var cors = require('cors')
+var fileupload = require("express-fileupload");
 const express = require("express"),
   PORT = 5000,
   app = express();
 
 const db = require("./db");
 const connection = db.connection;
-const options = {
-  origin: 'http://localhost:3000',
-}
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors(options))
+app.use(fileupload());
 
 app.get("/api/v1/items", (req, res) => {
   connection.query(
@@ -23,32 +20,33 @@ app.get("/api/v1/items", (req, res) => {
   );
 });
 
-app.get("/api/v1/items/men", (req, res) => {
-  connection.query(
-    'SELECT * FROM items WHERE gender = "MEN"',
-    function (err, items) {
-      console.log(items); // results contains rows returned by server
-      res.send(items);
-    }
-  );
-});
-
-app.get("/api/v1/items/women", (req, res) => {
-  connection.query(
-    'SELECT * FROM items WHERE gender = "WOMEN"',
+app.get("/api/v1/items/", (req, res) => {
+  let gender = req.query.gender;
+  let sql = 'SELECT * FROM items WHERE gender=?'
+  connection.query(sql, [gender],
     function (err, items) {
       res.send(items);
     }
   );
 });
 
-app.post("/closet", (req, res) => {
+app.post("/api/v1/closet", (req, res) => {
+  console.log(req.files.image);
+  console.log(typeof (req.files.image))
   let newItem = {
-    ...req.body
+    colour: req.body.colour,
+    size: req.body.size,
+    gender: req.body.gender,
+    brand: req.body.brand,
+    state: req.body.state,
+    description: req.body.description,
+    image: req.files.image.data,
+    price: req.body.price,
+    category: req.body.category,
+    stock: req.body.stock
   }
-  let sql = "INSERT INTO items SET?"
+  let sql = 'INSERT INTO items SET?'
   connection.query(sql, newItem,
-
     function (err, result) {
       if (err) throw err;
       console.log("Number of records inserted: " + result.affectedRows);

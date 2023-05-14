@@ -56,23 +56,24 @@ const UploadWidget = ({ children, onUpload }) => {
     );
   }
 
-  /**
+/**
    * open
    * @description When triggered, uses the current widget instance to open the upload modal
    */
 
-  function open() {
-    if ( !widget ) {
-      widget = createWidget();
-    }
-    widget && widget.open();
-  }
+function open() {
+  // Fix for uploading only the first items image
+  //if ( !widget ) {
+    widget = createWidget();
+  //}
+  widget && widget.open();
+}
 
-  return (
-    <>
-      {children({ cloudinary, widget, open })}
-    </>
-  )
+return (
+  <>
+    {children({ cloudinary, widget, open })}
+  </>
+)
 }
 
 export default UploadWidget;
