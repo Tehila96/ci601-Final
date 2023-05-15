@@ -43,18 +43,20 @@
     position: absolute;
     top: 0;
     right: 0;
+    margin: 10px 10px 0 0;
+    padding: 0 10px 0 0;
     background-color: #111110;
     border: #ffffff;
-    padding: 10px;
   }
 
   #button_open {
     position: absolute;
     top: 0;
     right: 0;
+    margin: 10px 10px 0 0;
+    padding: 0 10px 0 0;
     background-color: #111110;
     border: #ffffff;
-    padding: 10px;
   }
 
   #logo {

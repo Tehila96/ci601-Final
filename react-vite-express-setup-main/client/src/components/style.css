@@ -1,3 +1,4 @@
+/**Login images**/
 .login {
     background-color: #fff; /* Green */
     color: #111110;
@@ -19,11 +20,105 @@
     font-size: 16px;
 }
 
-.preview_image {
-    width: 25%;
-    object-fit: cover;
+/** Items View`**/
+.product_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    width: 70%;
+    margin: 0 auto;
 }
 
-/* .profile_details {
+.product_item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}  
 
-} */
+/** Item card **/
+.card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #ccda86;
+}
+
+.card-img-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card>.card-inner {
+    padding: 10px;
+}
+
+
+.card .header {
+    margin-bottom: 5px;
+    height: 7vh;
+}
+
+.card img {
+    width: 100%;
+    transition: transform .25s;
+    z-index: -1;
+    float: left;
+    height: 25vh;
+    width: 3ww;
+}
+
+.card:hover img {
+    transform: scale(1.5);
+}
+
+/** Item Form **/
+
+input {
+    display: block;
+    margin-top: 5px;
+}
+
+select {
+    display: block;
+    margin-top: 5px;
+}
+
+button {
+    margin: 20px;
+}
+
+label {
+    margin-top: 5px;
+}
+
+/**closet layout**/
+
+.closet_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 90px;
+    margin: 25px;
+    padding: 20px;
+    background-color: #fcfcfc;
+    color:#111110;
+    border: #111110 2px solid;
+}
+
+/**profile layout**/
+.profile_details  {
+    padding: 100px 0 0 50px; ;
+}
+
+.profile_details h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+
+

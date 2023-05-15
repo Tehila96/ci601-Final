@@ -2,6 +2,7 @@ import {React, useEffect, useState, useRef} from "react";
 import Select from 'react-select';
 import axios from "axios";
 import { Buffer } from "buffer";
+import ItemCard from "./itemCard";
 
 // -- array of items [{ itemID, colour, size, gender, brand, description, image, price, category, stock }]
 const ItemsView = (props) => {
@@ -89,24 +90,17 @@ const ItemsView = (props) => {
       </div>
 
       
-
+    <div className="product_grid">
       {arItemsFilter.map((it, i) => (
-      <li key={i}>
-        {it.colour} ,
-        {it.size} ,
-        {it.category} ,
-        {it.state} ,
-        {
-          it.image != null && it.image?.data?.length !== 0 &&
-           <img src={`data:image/png;base64,${getUrl(it.image)}`} alt=""/>
-        }
-        {it.price} ,
-        {it.description} ,
-        {it.stock}
-      </li>))
-    }
-    </>
-  );
+        <span key={i}>
+          <div className="product_item">
+            <ItemCard item={it}></ItemCard>
+          </div>
+        </span>))
+      }
+      </div>
+      </>
+   );
   }
 
 export default ItemsView;

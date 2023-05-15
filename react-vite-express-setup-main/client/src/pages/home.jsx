@@ -5,7 +5,9 @@ import './pageStyle.css';
 function Home() {
     return (
         <div id="wrapper">
-            <img src="images/home hero.png" alt="Hero image" className="hero" />
+            <div className="hero">
+            <img src="images/home.png" alt="Hero image" className="hero" />
+            </div>
             <header>
                 <h2>Your Sustainable social platform for swapping second-hand clothes!</h2>
             </header>
