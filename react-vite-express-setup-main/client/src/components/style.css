@@ -1,7 +1,6 @@
 .login {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
+    background-color: #fff; /* Green */
+    color: #111110;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -24,3 +23,7 @@
     width: 25%;
     object-fit: cover;
 }
+
+/* .profile_details {
+
+} */

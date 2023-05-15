@@ -5,13 +5,13 @@ const Profile = () => {
 
     return (
         isAuthenticated && (
-            <article className='column'>
+            <div className="profile_details">
                 {user?.picture && <img src={user.picture} alt={user?.name} />}
                 <h2>{user?.name}</h2>
                 {/* <ul>
                     {Object.keys(user).map((objKey, i) => <li key={i}>{objKey}: {user[objKey]} </li>)}
                 </ul> */}
-            </article>
+            </div>
         )
     )
 }

@@ -7,8 +7,8 @@ import './pageStyle.css';
 export const Account = () => {
 const { isLoading, error } = useAuth0();
     return (
-        <main className="column">
-            <section className="middel">
+        <main>
+            <div className="middel">
             <h1>Welcome Back!</h1>
             {error && <p>Authentication Error</p>}
             {!error && isLoading && <p>Loading...</p>}
@@ -18,7 +18,7 @@ const { isLoading, error } = useAuth0();
                     <LogoutButton />
                 </>
             )}
-            </section>
+            </div>
         </main>
     )
 

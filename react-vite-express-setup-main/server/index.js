@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(fileupload());
 
-app.get("/api/v1/items", (req, res) => {
+app.get("/api/v1/all-items", (req, res) => {
   connection.query(
     'SELECT * FROM items',
     function (err, items) {
