@@ -7,6 +7,13 @@ const express = require("express"),
 const db = require("./db");
 const connection = db.connection;
 
+const env = require("dotenv").config({ path: "./.env" });
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
+  apiVersion: "2022-11-15",
+});
+
+app.use(express.static(process.env.STATIC_DIR));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(fileupload());
@@ -31,8 +38,6 @@ app.get("/api/v1/items/", (req, res) => {
 });
 
 app.post("/api/v1/closet", (req, res) => {
-  console.log(req.files.image);
-  console.log(typeof (req.files.image))
   let newItem = {
     colour: req.body.colour,
     size: req.body.size,
@@ -54,6 +59,32 @@ app.post("/api/v1/closet", (req, res) => {
     })
 });
 
+app.get("/api/v1/config", (req, res) => {
+  res.send({
+    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+  });
+});
+
+app.post("/api/v1/create-payment-intent", async (req, res) => {
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      currency: "GBP",
+      amount: 1999,
+      automatic_payment_methods: { enabled: true },
+    });
+
+    // Send publishable key and PaymentIntent details to client
+    res.send({
+      clientSecret: paymentIntent.client_secret,
+    });
+  } catch (e) {
+    return res.status(400).send({
+      error: {
+        message: e.message,
+      },
+    });
+  }
+});
 
 app.listen(PORT, () =>
   console.log(`start listening on port : ${PORT}`));

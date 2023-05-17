@@ -1,6 +1,4 @@
-import { useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import axios from 'axios';
 
 import './App.css';
 import Nav from './layout/nav';
@@ -12,26 +10,12 @@ import Account from './pages/login';
 import About from './pages/about';
 import Home from './pages/home';
 import Footer from './layout/footer';
+import ItemDetails from './pages/itemDetails';
+import Payment from './pages/payment';
+import PaymentConfirm from './pages/paymentConfirm';
 
 // Main application
 function App() {
-  const [count, setCount] = useState(0);
-  const [data, setData] = useState();
-    const url = "/api/v1/items";
-  
-useEffect(getData,[]);
-
-  function getData() {
-    axios
-      .get(url)
-      .then((res) => {
-        setData(res.data);
-        console.log(res.data);
-      } )
-      .catch((err) => {
-        console.error(err);
-      });
-  }
 
   // Render all components for application
   return (
@@ -48,6 +32,10 @@ useEffect(getData,[]);
           <Route path="/closet" element={<Closet />} />
           <Route path="/account" element={<Account />} />
           <Route path="/about" element={<About />} />
+          <Route path="/:gender/:itemTitle" element={<ItemDetails />} />
+          <Route path="/closet/:gender/:itemTitle" element={<ItemDetails />} />
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment-confirm" element={<PaymentConfirm />} />
         </Routes>
 
         <Footer />

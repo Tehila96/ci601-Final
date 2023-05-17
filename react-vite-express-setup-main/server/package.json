@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.17.3",
-    "mysql2": "^3.2.4"
+    "mysql2": "^3.2.4",
+    "stripe": "^12.5.0"
   }
 }

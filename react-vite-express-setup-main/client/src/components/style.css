@@ -79,6 +79,14 @@
 
 /** Item Form **/
 
+.form_wrapper {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    color:#111110;
+    border: #111110 1px solid;
+}
+
 input {
     display: block;
     margin-top: 5px;
@@ -120,5 +128,7 @@ label {
     margin-bottom: 15px;
 }
 
-
+.profile_img {
+    margin: 5% 0 0 15%;
+}
 

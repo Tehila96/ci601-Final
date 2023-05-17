@@ -45,6 +45,7 @@
     background-image: url();
 }
 
+/* blog page */
 .blog {
     display: grid;
     grid-template-columns: 1fr;

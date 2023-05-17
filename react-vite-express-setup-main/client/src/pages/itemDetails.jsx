@@ -1,12 +1,18 @@
 import React from "react";
 import getItemImageUrl from "../helpers/getItemImageUrl";
-import { useLocation } from 'react-router-dom'; // useLocation hook to get the item object from the state of previous page
+import { useLocation, useNavigate } from 'react-router-dom'; // useLocation hook to get the item object from the state of previous page
 
 // This page displays the details of the item 
 //that was clicked on the previous page
 function ItemDetails() {
     const location = useLocation();
+    const navigate = useNavigate();
     const item = location.state.item;
+
+    function NavigateToPayment() {
+        navigate("/payment");
+    }
+
     return (
         <div>
             <header>
@@ -25,7 +31,9 @@ function ItemDetails() {
                     <img src={getItemImageUrl(item.image)} alt="item image" />
                 }
             </ul>
-
+            <div>
+                <button onClick={NavigateToPayment}>Buy Now</button>
+            </div>
         </div>
     );
 }
