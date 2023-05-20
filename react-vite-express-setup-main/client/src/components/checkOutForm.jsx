@@ -37,7 +37,7 @@ function CheckoutForm() {
     };
 
     return (
-        <form id="payment-form" onSubmit={handleSubmit}>
+        <form id="payment_form" onSubmit={handleSubmit}>
             <PaymentElement id="payment-element" />
             <button disabled={isProcessing || !stripe || !elements} id="submit">
                 <span id="button-text">

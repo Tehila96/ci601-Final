@@ -9,7 +9,7 @@ import './style.css';
 function CreateItemForm() {
 
     const navigate = useNavigate();
-    const [url, setUrl] = useState();
+    const [url, setUrl] = useState("");
     const [error, updateError] = useState();
 
     const colour = useRef();
@@ -38,6 +38,9 @@ function CreateItemForm() {
             message.push("No brand");
         if (!(price.current.value.trim()))
             message.push("No price");
+        else
+            if(!(price.current.value >=0.4))
+                message.push("A positive number for price above/equale to 0.4");
         if (!(url.trim()))
             message.push("No Image");
 
@@ -61,7 +64,8 @@ function CreateItemForm() {
     }
 
     // function to handle post request
-    function postRequest() {
+    function postRequest(e) {
+        e.preventDefault();
          // call function to validate user input
         const validationResult = InputValidation();
         // if there is an error, alert user and return
@@ -87,7 +91,7 @@ function CreateItemForm() {
                     gender: gender.current.value,
                     brand: brand.current.value,
                     state: state.current.value,
-                    iteamTitle: itemTitle.current.value,
+                    itemTitle: itemTitle.current.value,
                     description: description.current.value,
                     image: imageBlob,
                     price: price.current.value,
@@ -124,52 +128,49 @@ function CreateItemForm() {
                         open();
                     }
                     return (
-                        <span className="form_wrapper">
-                            <h2> New Item </h2>
+                        <form onSubmit={postRequest} className="FormWrapper">
                             <label htmlFor="">Item Title</label>
-                            <input ref={itemTitle} type="text" />
+                            <input ref={itemTitle} type="text" className="create_item_form"/>
                             <label htmlFor="">Description</label>
-                            <input ref={description} type="text" />
+                            <input ref={description} type="text" className="create_item_form"/>
                             <label htmlFor="">Category</label>
-                            <select ref={category}>
+                            <select ref={category} className="create_item_form">
                                 <option value="Tops">Tops</option>
                                 <option value="Bottoms">Bottoms</option>
                                 <option value="Shoes">Shoes</option>
                                 <option value="Accessories">Accessories</option>
                             </select>
                             <label htmlFor="">Colour</label>
-                            <input ref={colour} type="text" />
+                            <input ref={colour} type="text" className="create_item_form"/>
                             <label htmlFor="">Size</label>
-                            <input ref={size} type="text" />
+                            <input ref={size} type="text" className="create_item_form"/>
                             <label htmlFor="">Gender</label>
-                            <select ref={gender}>
+                            <select ref={gender} className="create_item_form">
                                 <option value="MEN">MEN</option>
                                 <option value="WOMEN">WOMEN</option>
                             </select>
                             <label htmlFor="">Brand</label>
-                            <input ref={brand} type="text" />
+                            <input ref={brand} type="text" className="create_item_form"/>
                             <label htmlFor="">State</label>
-                            <select ref={state}>
+                            <select ref={state} className="create_item_form">
                                 <option value="new">new</option>
                                 <option value="used-like new">used-like new</option>
                                 <option value="used-good">used-good</option>
                                 <option value="used-fair">used-fair</option>
                             </select>
                             <label htmlFor="">Price</label>
-                            <input ref={price} type="number" />
+                            <input ref={price} type="number" className="create_item_form" step="0.01"/ >
                             <label htmlFor="">Stock</label>
-                            <select ref={stock}>
+                            <select ref={stock} className="create_item_form">
                                 <option value="Available">Available</option>
                                 <option value="Sold">Sold</option>
                             </select>
-                            <button onClick={handleOnClick}>
+                            <button onClick={handleOnClick} className="create_item_form">
                                 Upload Photo
                             </button>
-                            <button onClick={postRequest}>
-                                Upload
-                            </button>
+                            <input type="submit" value="Upload" className="create_item_form"/>
                             <img src={url}></img>
-                        </span>)
+                        </form>)
                 }}
             </UploadWidget>
         </>

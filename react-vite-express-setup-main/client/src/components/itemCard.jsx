@@ -22,10 +22,10 @@ const ItemCard = (props) => {
                 <div className="card-inner">
                     <div className="header">
                         <h2>{item.itemTitle}</h2>
-                        <h4>{item.description}</h4>
+                        <h5>{item.description}</h5>
                     </div>
                     <div className="content">
-                        <p>Price: {item.price} ₪</p>
+                        <h4>Price: {item.price} £</h4>
                     </div>
                     <button onClick={() => navigateToProductInfo(item)}>more info</button>
                 </div>

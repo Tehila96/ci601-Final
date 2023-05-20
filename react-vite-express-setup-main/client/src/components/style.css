@@ -1,6 +1,7 @@
 /**Login images**/
 .login {
-    background-color: #fff; /* Green */
+    background-color: #FF3FA4;
+    /* Green */
     color: #111110;
     padding: 10px 20px;
     text-align: center;
@@ -10,7 +11,8 @@
 }
 
 .logout {
-    background-color: #f44336; /* Red */
+    background-color: #00B5E5;
+    /* Red */
     border: none;
     color: white;
     padding: 10px 20px;
@@ -21,19 +23,38 @@
 }
 
 /** Items View`**/
+
+.center_header_floating {
+    display: block;
+    text-align: center;
+    position: relative;
+    float: right;
+    margin-right: 25%;
+}
+
+.center_header
+{
+    text-align: center;
+    position: relative;
+    margin: 0 25%;
+}
+
 .product_grid {
+    position: relative;
+    float: right;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    width: 70%;
-    margin: 0 auto;
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 25%;
 }
 
 .product_item {
     border: 1px solid #ddd;
     padding: 20px;
     text-align: center;
-}  
+}
 
 /** Item card **/
 .card {
@@ -42,7 +63,7 @@
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #ccda86;
+    background-color: #D25FF1;
 }
 
 .card-img-wrapper {
@@ -69,12 +90,15 @@
     transition: transform .25s;
     z-index: -1;
     float: left;
-    height: 25vh;
-    width: 3ww;
+    height: 23vh;
 }
 
 .card:hover img {
     transform: scale(1.5);
+}
+
+.content {
+    margin-top: 10vh;
 }
 
 /** Item Form **/
@@ -83,22 +107,18 @@
     width: 50%;
     margin: 0 auto;
     padding: 20px;
-    color:#111110;
+    color: #111110;
     border: #111110 1px solid;
 }
 
-input {
-    display: block;
-    margin-top: 5px;
-}
 
-select {
+input.create_item_form,
+select.create_item_form,
+button.create_item_form {
     display: block;
-    margin-top: 5px;
-}
-
-button {
-    margin: 20px;
+    font-size: 1.1em;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 label {
@@ -114,13 +134,14 @@ label {
     margin: 25px;
     padding: 20px;
     background-color: #fcfcfc;
-    color:#111110;
+    color: #111110;
     border: #111110 2px solid;
 }
 
 /**profile layout**/
-.profile_details  {
-    padding: 100px 0 0 50px; ;
+.profile_details {
+    padding: 100px 0 0 50px;
+    ;
 }
 
 .profile_details h2 {
@@ -132,3 +153,134 @@ label {
     margin: 5% 0 0 15%;
 }
 
+
+
+/** as **/
+
+.wrapper {
+    height: 100%;
+}
+
+.filter {
+    position: sticky;
+    height: 100%;
+    width: 60%;
+    z-index: 1;
+    margin-left: 10%;
+    padding: 10px;
+    
+}
+
+.all_filters{
+    width: 50%;
+}
+
+.side_bar {
+    position: sticky;
+    left: 0;
+    background-color: #111;
+    height: 100%;
+    width: 36%;
+}
+
+
+/** GoTop Button css **/
+.goTopHidden {
+    display: none;
+}
+
+.goTop {
+    display: block;
+}
+
+.goTop__text {
+    position: fixed;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    bottom: 5%;
+    left: 90%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+}
+
+.goTop__text:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+
+    .closet_container {
+        grid-template-columns: none;
+        justify-content: center;
+    }
+
+    .profile_details{
+        top: 0;
+        margin: 0;
+
+    }
+
+    .profile_container{
+        position: relative;
+
+    }
+    .profile_container>h2
+    {
+        position: relative;
+        display: block;
+    }
+    
+    .wrapper {
+        display: grid;
+        flex-direction: column;
+    }
+
+    .all_filters{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5%;
+        margin: 5% auto;
+        width: 80%;
+    }
+    .filter {
+        order: 1;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        color: #111;
+        background-color: white;
+    }
+    
+
+    .filter_button
+    {
+        margin: 0 30%;
+        width: 30%;
+    }
+
+    .product_grid {
+        display: grid;
+        order: 2;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .side_bar {
+        display: flex;
+        background-color: white;
+        width: 100%;
+    }
+
+    .center_header_floating {
+        text-align: center;
+        position: relative;
+        float: none;
+        margin-right: 0;
+    }
+    
+}

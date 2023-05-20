@@ -7,9 +7,9 @@ import './pageStyle.css';
 export const Account = () => {
 const { isLoading, error } = useAuth0();
     return (
-        <main>
-            <div className="middel">
-            <h1>Welcome Back!</h1>
+        <div className="login_page">
+            <div className="login_middel">
+            <h1>Welcome to Second Best!</h1>
             {error && <p>Authentication Error</p>}
             {!error && isLoading && <p>Loading...</p>}
             {!error && !isLoading && (
@@ -19,7 +19,7 @@ const { isLoading, error } = useAuth0();
                 </>
             )}
             </div>
-        </main>
+        </div>
     )
 
 }

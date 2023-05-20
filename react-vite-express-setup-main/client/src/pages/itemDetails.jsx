@@ -10,7 +10,7 @@ function ItemDetails() {
     const item = location.state.item;
 
     function NavigateToPayment() {
-        navigate("/payment");
+        navigate("/payment", { state: { item: item } });
     }
 
     return (
@@ -20,13 +20,13 @@ function ItemDetails() {
             </header>
 
             <ul>
-                <li>{item.colour}</li>
-                <li>{item.size}</li>
-                <li>{item.category}</li>
-                <li>{item.state}</li>
-                <li>{item.price}</li>
+                <li>Description: {item.description}</li>
+                <li>Colour: {item.colour}</li>
+                <li>Size: {item.size}</li>
+                <li>Category: {item.category}</li>
+                <li>Item State: {item.state}</li>
+                <li>Price: {item.price} £</li>
                 <li>{item.stock}</li>
-                <li>{item.description}</li>
                 {
                     <img src={getItemImageUrl(item.image)} alt="item image" />
                 }

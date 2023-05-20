@@ -6,44 +6,149 @@
     font-size: 150%;
 }
 
-.middel {
-    height: 90%;
+.closet_container {
+    display: grid;
+    grid-template-columns: none;
+    grid-gap: 90px;
     margin: 25px;
     padding: 20px;
-    text-align: center;
-    background-color: #111110;
-    color:#fff;
+    background-color: #fcfcfc;
+    color: #111110;
+    border: #111110 2px solid;
 }
 
-.middel h1 {
-    font-size: 300%;
-    padding: 70px 20px 20px 20px;
+.profile_container {
+    display: block;
+    width: 100%;
+}
+
+.login_page {
+    margin: 20px;
+    padding: 10px;
+    background-color: #111110;
+    color: #fff;
+}
+.login_middel {
+    height: 70%;
+    width: 90%;
+    margin: 10px;
+    text-align: center;
+    background-color: #111110;
+    color: #fff;
+}
+
+.login_middel h1 {
+    font-size: 200%;
+    padding: 50px 10px 10px 10px;
+}
+
+
+.wrapper {
+    display: block;
 }
 
 .hero {
-    width: 100%; 
+    width: 100%;
     max-width: 768px;
     height: auto;
-    margin-top: 15px;
 }
+
+/** hero card **/
+.hero_card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-color: #ccda86;
+}
+
+.card_img_wrapper {
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+    z-index: 0;
+}
+
+.hero_card:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+
+.card_img_wrapper>img {
+    transition: transform .25s;
+    z-index: -1;
+    float: left;
+}
+
+img.hero {
+    position: relative;
+}
+
+.hero_card img {
+    width: 100%;
+    transition: transform .25s;
+    height: 64ch;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+.hero_card:hover img {
+    transform: scale(1.5);
+}
+
 
 .cards {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 10px;
-    margin: 25px;
-    padding: 20px;
     background-color: #111110;
-    color:#fff;
+    color: #fff;
+
 }
 
-.women_card {
-    background-image: url();
+.woman_card>img {
+    height: 100%;
+    width: 100%;
+
 }
 
-.men_card {
-    background-image: url();
+.man_card>img {
+    height: 100%;
+    width: 100%;
 }
+
+.top_text_on_image {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #111110;
+}
+
+/** about **/
+
+.about-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .about-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .about-section h3 {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  
+  .about-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
 
 /* blog page */
 .blog {
@@ -53,7 +158,7 @@
     margin: 25px;
     padding: 20px;
     background-color: #111110;
-    color:#fff;
+    color: #fff;
 }
 
 .blog_container {
@@ -63,26 +168,32 @@
     margin: 25px;
     padding: 20px;
     background-color: #111110;
-    color:#fff;
+    color: #fff;
 }
 
 .blog_item {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
-    margin: 25px;
-    padding: 20px;
+    margin: 15px;
     background-color: #111110;
-    color:#fff;
+    color: #fff;
 }
+
+.filter {
+    background-color: #ffffff;
+}
+
 @media screen and (min-width: 768px) {
     #warpper {
         background-color: #111110;
     }
+
     .menu_grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
+        z-index: -1;
     }
 
     .box {
@@ -96,22 +207,49 @@
         margin: 25px 50px 25px 50px;
         padding: 20px;
         background-color: #111110;
-        color:#fff;
+        color: #fff;
     }
 
     .filter {
-        width: 30%;
-        height: 40%;
+        position: absolute;
+        width: 90%;
+        height: 100%;
         background-color: #ffffff;
-        color:#111110;
-        border: #111110 2px solid;
-        margin: 10px;
-        padding: 10px;
+    }
+
+    .input_filters {
+        display: block;
+        width: 100%;
+    }
+
+    .select_filters {
+        display: block;
+        width: 100%;
     }
 
     .hero {
-        max-width: 100%; 
-        height: auto;
+        max-width: 100%;
     }
-}
 
+    .login_page {
+        margin: 20px;
+        padding: 10px;
+        background-color: #111110;
+        color: #fff;
+    }
+    .login_middel {
+        height: 70%;
+        width: 90%;
+        margin: 25px;
+        padding: 20px;
+        text-align: center;
+        background-color: #111110;
+        color: #fff;
+    }
+    
+    .login_middel h1 {
+        font-size: 300%;
+        padding: 70px 20px 20px 20px;
+    }
+
+}

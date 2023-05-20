@@ -45,6 +45,7 @@ app.post("/api/v1/closet", (req, res) => {
     brand: req.body.brand,
     state: req.body.state,
     description: req.body.description,
+    itemTitle: req.body.itemTitle,
     image: req.files.image.data,
     price: req.body.price,
     category: req.body.category,
@@ -65,11 +66,16 @@ app.get("/api/v1/config", (req, res) => {
   });
 });
 
-app.post("/api/v1/create-payment-intent", async (req, res) => {
+app.post("/api/v1/create-payment-intent/", async (req, res) => {
+  if(req.body.price < 0.4) return res.status(400).send({ error: {
+      message: "Bad request, charging amount under 0.4 pounds isn't possible",},
+  });
+  const priceInPence = req.body.price;
+  const priceInPounds = priceInPence*100;
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       currency: "GBP",
-      amount: 1999,
+      amount: priceInPounds,
       automatic_payment_methods: { enabled: true },
     });
 
@@ -84,6 +90,16 @@ app.post("/api/v1/create-payment-intent", async (req, res) => {
       },
     });
   }
+});
+app.put("/api/v1/sold/", async (req, res) => {
+  const idToSell = req.body.id;
+  let sql = 'INSERT INTO items Wh?'
+  connection.query(sql, newItem,
+    function (err, result) {
+      if (err) throw err;
+      console.log("Number of records inserted: " + result.affectedRows);
+      res.send(newItem);
+    })
 });
 
 app.listen(PORT, () =>

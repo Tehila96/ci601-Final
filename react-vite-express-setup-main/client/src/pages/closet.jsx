@@ -11,13 +11,17 @@ function Closet() {
 
   return (
     <div className="closet_container">
-    {
-      isAuthenticated &&  
-      <> 
-      <Profile />
-      <CreateItemForm />
-      </>
-    }
+      {
+        isAuthenticated &&
+        <>
+          <div className='profile_container'>
+            <Profile />
+          </div>
+          <div className='create_item_form_container'>
+            <CreateItemForm />
+          </div>
+        </>
+      }
     </div>
   );
 }
