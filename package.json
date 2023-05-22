@@ -15,6 +15,7 @@
     "vite": "^4.3.7"
   },
   "scripts": {
-    "start": "concurrently \"cd ./server && npm run server\" \"cd ./client && npm run dev\""
+    "start": "concurrently \"cd ./server && npm run server\" \"cd ./client && npm run dev\"",
+    "build": "cd ./client && npm run build"
   }
 }

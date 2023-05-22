@@ -19,7 +19,7 @@ function Home() {
                 <NavLink to="/women">
                     <div className="woman_card hero_card">
                         <div className="card_img_wrapper">
-                            <img src="images/woman.jpg" alt="Hero image" className="hero" />
+                            <img src="images/women.png" alt="Hero image" className="hero" />
                             <h1 className="top_text_on_image">Women</h1>
                         </div>
                     </div>
@@ -27,7 +27,7 @@ function Home() {
                 <NavLink to="/men">
                     <div className="man_card hero_card">
                         <div className="card_img_wrapper">
-                            <img src="images/man.jpg" alt="Hero image" className="hero" />
+                            <img src="images/men.png" alt="Hero image" className="hero" />
                             <h1 className="top_text_on_image">Men</h1>
                         </div>
                     </div>

@@ -9,4 +9,6 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  // base: "/ci601/",
+  build: { sourcemap: 'inline' },
 });

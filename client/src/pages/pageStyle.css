@@ -59,7 +59,7 @@
     transition: all 0.2s ease-in-out;
     box-sizing: border-box;
     margin-bottom: 10px;
-    background-color: #ccda86;
+    background-color: #fff;
 }
 
 .card_img_wrapper {
@@ -87,8 +87,8 @@ img.hero {
 .hero_card img {
     width: 100%;
     transition: transform .25s;
-    height: 64ch;
-    padding: 10px;
+    /* height: 64ch;
+    padding: 10px; */
     margin-right: 5px;
 }
 

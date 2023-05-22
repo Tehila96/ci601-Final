@@ -32,11 +32,10 @@
     margin-right: 25%;
 }
 
-.center_header
-{
+.center_header {
     text-align: center;
     position: relative;
-    margin: 0 25%;
+    /* margin: 0 25%; */
 }
 
 .product_grid {
@@ -166,9 +165,8 @@ label {
     height: 100%;
     width: 60%;
     z-index: 1;
-    margin-left: 10%;
-    padding: 10px;
-    
+    margin-left: 10%;    
+
 }
 
 .all_filters{
@@ -178,7 +176,7 @@ label {
 .side_bar {
     position: sticky;
     left: 0;
-    background-color: #111;
+    background-color: #fff;
     height: 100%;
     width: 36%;
 }
