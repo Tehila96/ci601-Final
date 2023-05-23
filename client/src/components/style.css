@@ -8,6 +8,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    border-radius: 10px;
 }
 
 .logout {
@@ -20,6 +21,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    border-radius: 10px;
 }
 
 /** Items View`**/
@@ -110,7 +112,6 @@
     border: #111110 1px solid;
 }
 
-
 input.create_item_form,
 select.create_item_form,
 button.create_item_form {
@@ -177,7 +178,7 @@ label {
     position: sticky;
     left: 0;
     background-color: #fff;
-    height: 100%;
+    height: 90%;
     width: 36%;
 }
 

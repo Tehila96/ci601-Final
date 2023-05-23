@@ -11,6 +11,10 @@ function Closet() {
 
   return (
     <div className="closet_container">
+      <>
+      {!isAuthenticated &&
+      <h1 className='center_closet'>Log in to see your closet!</h1>
+      }
       {
         isAuthenticated &&
         <>
@@ -22,6 +26,7 @@ function Closet() {
           </div>
         </>
       }
+      </>
     </div>
   );
 }

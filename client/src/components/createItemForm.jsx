@@ -129,6 +129,8 @@ function CreateItemForm() {
                     }
                     return (
                         <form onSubmit={postRequest} className="FormWrapper">
+                            <div className="create_item_form">
+                            <h2>Upload new Items</h2>
                             <label htmlFor="">Item Title</label>
                             <input ref={itemTitle} type="text" className="create_item_form"/>
                             <label htmlFor="">Description</label>
@@ -170,8 +172,10 @@ function CreateItemForm() {
                             </button>
                             <input type="submit" value="Upload" className="create_item_form"/>
                             <img src={url}></img>
-                        </form>)
-                }}
+                            </div>
+                        </form>
+                        )
+                }}  
             </UploadWidget>
         </>
     );
