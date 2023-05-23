@@ -91,16 +91,6 @@ app.post("/api/v1/create-payment-intent/", async (req, res) => {
     });
   }
 });
-app.put("/api/v1/sold/", async (req, res) => {
-  const idToSell = req.body.id;
-  let sql = 'INSERT INTO items Wh?'
-  connection.query(sql, newItem,
-    function (err, result) {
-      if (err) throw err;
-      console.log("Number of records inserted: " + result.affectedRows);
-      res.send(newItem);
-    })
-});
 
 app.listen(PORT, () =>
   console.log(`start listening on port : ${PORT}`));

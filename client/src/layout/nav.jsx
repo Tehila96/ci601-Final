@@ -57,6 +57,7 @@ const Nav = (props) => {
                 <input type="image" src={navButtonSrc} alt="=" width={40} height={40} />
             </button>
             <>
+            {/* {not mobile} */}
                 {isMobileState == false &&
                     <nav id="navbar" className="active">
                         <ul>
@@ -72,6 +73,7 @@ const Nav = (props) => {
                         </ul>
                     </nav>
                 }
+                            {/* {mobile+mobileNav} */}
                 {isMobileState == true && navState == true &&
                     <nav id="navbar" className="active">
                         <ul>
