@@ -5,6 +5,7 @@
     "@stripe/stripe-js": "^1.53.0",
     "buffer": "^6.0.3",
     "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
     "env-cmd": "^10.1.0",
     "express-fileupload": "^1.4.0",
     "mysql": "^2.18.1",
